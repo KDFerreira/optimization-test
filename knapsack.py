@@ -30,7 +30,7 @@ selection_constraint = cp.sum(selection) == 1
 total_utility = utilities * selection
 
 # We tell cvxpy that we want to maximize total utility
-# subject to weight_constraint. All constraints in
+# subject to list of constraints. All constraints in
 # cvxpy must be passed as a list
 knapsack_problem = cp.Problem(cp.Maximize(total_utility), [weight_constraint, selection_constraint])
 
